@@ -29,7 +29,9 @@
 					@endif
 					<ul class="nav navbar-nav navbar-right">
 						<li>
+							@if(!Auth::check())
 							<a href="#">Sign up</a>
+							@endif
 						</li>
 					</ul>
 				</div>
