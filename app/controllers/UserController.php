@@ -32,7 +32,12 @@ class UserController extends BaseController{
 	}
 
 	public function log_in(){
-		
+		if(Auth::attempt(array('username' => Input::get('username'), 'password' => Input::get('password')))){
+			echo "logged in";
+		}
+		else{
+			echo "not logged in";
+		}
 	}
 
 }
