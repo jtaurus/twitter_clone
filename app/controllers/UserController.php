@@ -36,7 +36,7 @@ class UserController extends BaseController{
 			Return Redirect::route('homepage');
 		}
 		else{
-			echo "not logged in";
+			Return View::make('login_page')->with('message', 'Invalid user data provided.');
 		}
 	}
 
