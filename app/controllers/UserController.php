@@ -33,7 +33,7 @@ class UserController extends BaseController{
 
 	public function log_in(){
 		if(Auth::attempt(array('username' => Input::get('username'), 'password' => Input::get('password')))){
-			Return Redirect::route('user_profile', Auth::user()->username);
+			Return Redirect::to(URL::previous());
 		}
 		else{
 			Return View::make('login_page')->with('message', 'Invalid user data provided.');
