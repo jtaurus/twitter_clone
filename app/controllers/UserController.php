@@ -40,4 +40,8 @@ class UserController extends BaseController{
 		}
 	}
 
+	public function logout(){
+		
+	}
+
 }
