@@ -12,7 +12,11 @@ class UserController extends BaseController{
 	}
 
 	public function create_user(){
-
+		$newUser = new User;
+		$newUser->username = Input::get('username');
+		$newUser->email = Input::get('email');
+		$newUser->password = Hash::make(Input::get('password'));
+		$newUser->save();
 	}
 
 }
