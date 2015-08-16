@@ -18,9 +18,11 @@ class HomeController extends BaseController {
 	public function display_homepage()
 	{
 		$firstUserReference = User::find(1);
-		$usersMessages = $firstUserReference->messages()->get();
-		$usersFollowings = $firstUserReference->followers()->get();
-		dd($usersFollowings);
+		echo "Username: " . $firstUserReference->username;
+		echo "<br />";
+		echo "Latest message: " . $firstUserReference->messages()->get()->last()->message_body;
+		$latestFollowerId = $firstUserReference->followers()->get()->last()->follower_user_id;
+		echo "Latest follower: " . User::findOrFail($latestFollowerId)->username;
 	}
 
 }
