@@ -32,6 +32,9 @@
 							@if(!Auth::check())
 							<a href="#">Sign up</a>
 							@endif
+							@if(Auth::check())
+							<a href="{{route('logout')}}">Logout</a>
+							@endif
 						</li>
 					</ul>
 				</div>
