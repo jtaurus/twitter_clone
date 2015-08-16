@@ -9,8 +9,8 @@
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
 						@if(Auth::check())
-						<li class="active">
-							<a href="#">{{Auth::user()->username}}</a>
+						<li class="inactive">
+							<a href="{{route('user_profile', Auth::user()->username)}}">Your profile</a>
 						</li>
 						@endif
 					</ul>
