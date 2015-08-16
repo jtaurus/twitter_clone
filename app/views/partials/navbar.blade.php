@@ -8,9 +8,11 @@
 				
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
+						@if(Auth::check())
 						<li class="active">
-							<a href="#">{{$user->username}}</a>
+							<a href="#">{{Auth::user()->username}}</a>
 						</li>
+						@endif
 					</ul>
 					<form class="navbar-form navbar-left" role="search">
 						<div class="form-group">
