@@ -2,4 +2,6 @@
 @section('title')
 Viewing profile: {{$data["user"]->username}}
 @stop
-{{$data["user"]->username}}
+@section('content')
+Viewing profile of user: {{$data["user"]->username}}
+@stop
