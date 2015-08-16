@@ -17,6 +17,7 @@ class UserController extends BaseController{
 		$newUser->email = Input::get('email');
 		$newUser->password = Hash::make(Input::get('password'));
 		$newUser->save();
+		Return Redirect::route('homepage');
 	}
 
 }
