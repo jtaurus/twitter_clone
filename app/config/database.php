@@ -55,7 +55,7 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'root',
+			'database'  => 'twitter_clone',
 			'username'  => 'root',
 			'password'  => '',
 			'charset'   => 'utf8',

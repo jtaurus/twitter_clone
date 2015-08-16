@@ -29,7 +29,7 @@ class CreateUsersTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop("Users")l
+		Schema::drop("Users");
 	}
 
 }
