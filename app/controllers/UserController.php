@@ -12,12 +12,19 @@ class UserController extends BaseController{
 	}
 
 	public function create_user(){
-		$newUser = new User;
-		$newUser->username = Input::get('username');
-		$newUser->email = Input::get('email');
-		$newUser->password = Hash::make(Input::get('password'));
-		$newUser->save();
-		Return Redirect::route('homepage');
+		$validatorRules = array('username' => 'required|unique:users', 'email' => 'required|email|unique:users', 'password' => 'required');
+		$validatorInstance = Validator::make(Input::all(), $validatorRules);
+		if($validatorInstance->passes()){
+			$newUser = new User;
+			$newUser->username = Input::get('username');
+			$newUser->email = Input::get('email');
+			$newUser->password = Hash::make(Input::get('password'));
+			$newUser->save();
+			Return Redirect::route('homepage');
+		}
+		else{
+			Return View::make('signup_page')->with('message', 'Please provide valid data.');
+		}
 	}
 
 }
