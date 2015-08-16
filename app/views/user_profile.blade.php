@@ -20,6 +20,8 @@ Viewing profile: {{$data["user"]->username}}
 					<div class="row">
 						<div class="col-md-12">
 							<h2 class="text-center">Recent activity</h2>
+							<h3 class="text-left">Followed</h3>
+							<h3 class="text-left">Started following</h3>
 						</div>
 					</div>
 				</div>
