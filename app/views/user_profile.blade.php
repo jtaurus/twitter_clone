@@ -11,7 +11,7 @@ Viewing profile: {{$data["user"]->username}}
 				<div class="col-md-3">
 					<div class="row">
 						<div class="col-md-12">
-							<h2 class="text-center">{{$data["user"]->username}}</h2>
+							<h2 class="text-center"><a href="{{route('user_profile', $data["user"]->username)}}">{{$data["user"]->username}}</a></h2>
 							<div class="text-left">Member since: {{$data["user"]->created_at}}</div>
 							<div class="text-left">Messages: {{$data["user"]->messages()->count()}}</div>
 							<div class="text-left">Followers: {{$data["user"]->followers()->count()}}</div>
