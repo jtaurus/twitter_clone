@@ -24,11 +24,11 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	protected $hidden = array('password', 'remember_token');
 
 	public function followers(){
-		return $this->hasMany('User', 'follower_user_id');
+		return $this->hasMany('Following', 'follower_user_id');
 	}
 
 	public function follows(){
-		return $this->hasMany('User', 'target_user_id');
+		return $this->hasMany('Following', 'target_user_id');
 	}
 
 	public function messages(){

@@ -18,8 +18,9 @@ class HomeController extends BaseController {
 	public function display_homepage()
 	{
 		$firstUserReference = User::find(1);
-		$usersMessages = $firstUserReference->messages()->all();
-		dd($usersMessages);
+		$usersMessages = $firstUserReference->messages()->get();
+		$usersFollowings = $firstUserReference->followers()->get();
+		dd($usersFollowings);
 	}
 
 }
