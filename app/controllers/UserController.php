@@ -28,6 +28,9 @@ class UserController extends BaseController{
 	}
 
 	public function display_login_page(){
+		if(Auth::check()){
+			Return Redirect::route('user_profile', Auth::user()->username);
+		}
 		Return View::make('login_page');
 	}
 
