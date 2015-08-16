@@ -27,4 +27,12 @@ class UserController extends BaseController{
 		}
 	}
 
+	public function display_login_page(){
+
+	}
+
+	public function log_in(){
+		
+	}
+
 }
