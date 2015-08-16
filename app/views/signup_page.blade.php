@@ -5,6 +5,9 @@ Sign up
 
 @section('content')
 <center>Create a new account</center>
+@if(isset($message))
+{{$message}}
+@endif
 <div class="col-md-4">
 </div>
 <div class="col-md-4">
