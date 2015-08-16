@@ -30,7 +30,7 @@
 					<ul class="nav navbar-nav navbar-right">
 						<li>
 							@if(!Auth::check())
-							<a href="#">Sign up</a>
+							<a href="{{route('signup_page')}}">Sign up</a>
 							@endif
 							@if(Auth::check())
 							<a href="{{route('logout')}}">Logout</a>
