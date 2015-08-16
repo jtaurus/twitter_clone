@@ -20,8 +20,22 @@ Viewing profile: {{$data["user"]->username}}
 					<div class="row">
 						<div class="col-md-12">
 							<h2 class="text-center">Recent activity</h2>
-							<h3 class="text-left">Followed</h3>
-							<h3 class="text-left">Started following</h3>
+							@if(isset($data["follows"]))
+							<h3 class="text-left">Started following:</h3>
+							@foreach($data["follows"] as $oneFollowed)
+							<li>
+							<a href="{{route('user_profile', $oneFollowed->username)}}">{{$oneFollowed->username}}</a>
+							</li>
+							@endforeach
+							@endif
+							@if(isset($data["followers"]))
+							<h3 class="text-left">Followed by:</h3>
+							@foreach($data["followers"] as $oneFollower)
+							<li>
+							<a href="{{route('user_profile', $oneFollower->username)}}">{{$oneFollower->username}}</a>
+							</li>
+							@endforeach
+							@endif
 						</div>
 					</div>
 				</div>
