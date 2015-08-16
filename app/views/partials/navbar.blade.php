@@ -14,10 +14,11 @@
 						</li>
 						@endif
 					</ul>
+					@if(!Auth::check())
 					<form class="navbar-form navbar-left" role="search">
 						<div class="form-group">
-							<label for="emailfield">Email address:</label>
-							<input class="form-control" type="text" id="emailfield">
+							<label for="emailfield">Username:</label>
+							<input class="form-control" type="text" id="username">
 							<label for="passwordfield">Password:</label>
 							<input class="form-control" type="password" id="passwordfield">
 						</div> 
@@ -25,6 +26,7 @@
 							Log-in
 						</button>
 					</form>
+					@endif
 					<ul class="nav navbar-nav navbar-right">
 						<li>
 							<a href="#">Sign up</a>
