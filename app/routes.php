@@ -26,7 +26,7 @@ Route::post('/signup', ['uses' => 'UserController@create_user']);
 
 Route::get('/login', ['as' => 'login_page', 'uses' => 'UserController@display_login_page']);
 
-Route::post('/login', ['uses' => 'UserController@log_in']);
+Route::post('/login', ['as' => 'login_post', 'uses' => 'UserController@log_in']);
 
 // Logout:
 

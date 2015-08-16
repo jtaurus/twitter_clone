@@ -15,17 +15,17 @@
 						@endif
 					</ul>
 					@if(!Auth::check())
-					<form class="navbar-form navbar-left" role="search">
-						<div class="form-group">
-							<label for="emailfield">Username:</label>
-							<input class="form-control" type="text" id="username">
-							<label for="passwordfield">Password:</label>
-							<input class="form-control" type="password" id="passwordfield">
-						</div> 
-						<button type="submit" class="btn btn-default">
-							Log-in
-						</button>
-					</form>
+							{{Form::open(array('url' => route('login_post'), "class" => "navbar-form navbar-left"));}}
+							<div class="form-group">
+							{{Form::label('username', 'Username');}}
+							{{Form::text('username', 'username', array('class' => 'form-control'));}}
+							</div>
+							<div class="form-group">
+							{{Form::label('password', 'Password');}}
+							{{Form::password('password', array('class' => 'form-control'));}}
+							</div>
+							{{Form::submit('Submit', array('class' => 'btn btn-default'));}}
+						{{Form::close();}}
 					@endif
 					<ul class="nav navbar-nav navbar-right">
 						<li>
@@ -37,6 +37,6 @@
 							@endif
 						</li>
 					</ul>
-				</div>
 				
 			</nav>
+
