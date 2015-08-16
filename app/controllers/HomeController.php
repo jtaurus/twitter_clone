@@ -17,7 +17,9 @@ class HomeController extends BaseController {
 
 	public function display_homepage()
 	{
-		return View::make('hello');
+		$firstUserReference = User::find(1);
+		$usersMessages = $firstUserReference->messages()->all();
+		dd($usersMessages);
 	}
 
 }
