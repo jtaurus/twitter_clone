@@ -7,4 +7,12 @@ class UserController extends BaseController{
 		Return View::make('user_profile')->with('user', $userReference);
 	}
 
+	public function display_signup_page(){
+		Return View::make('signup_page');
+	}
+
+	public function create_user(){
+
+	}
+
 }
