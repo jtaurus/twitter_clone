@@ -12,3 +12,5 @@
 */
 
 Route::get('/', ['as' => 'homepage', 'uses' => 'HomeController@display_homepage']);
+
+Route::get('/user/{username}', ['as' => 'user_profile', 'uses' => 'UserController@display_user_profile']);
