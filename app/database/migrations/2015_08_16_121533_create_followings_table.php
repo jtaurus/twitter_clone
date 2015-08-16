@@ -12,7 +12,12 @@ class CreateFollowingsTable extends Migration {
 	 */
 	public function up()
 	{
-		//
+		Schema::create('followings', function (Blueprint $table){
+			$table->increments('id');
+			$table->integer('follower_user_id');
+			$table->integer('target_user_id');
+			$table->timestamps();
+		});
 	}
 
 	/**
@@ -22,7 +27,7 @@ class CreateFollowingsTable extends Migration {
 	 */
 	public function down()
 	{
-		//
+		Schema::drop('followings');
 	}
 
 }
