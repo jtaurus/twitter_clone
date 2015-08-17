@@ -48,7 +48,9 @@ class UserController extends BaseController{
 		Return Redirect::to(URL::previous());
 	}
 
-	public function post_message(){
-		
+	public function post_message($username){
+		if(!Auth::check || Auth::user()->username != $username){
+			Return Redirect::to(URL::previous());
+		}
 	}
 }
