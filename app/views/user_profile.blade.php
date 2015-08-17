@@ -41,7 +41,9 @@ Viewing profile: {{$data["user"]->username}}
 				</div>
 				<div class="col-md-9">
 					<div class="row">
+						@if(Auth::check() && Auth::user()->username == $data["user"]->username)
 						@include('partials.message_posting_form')
+						@endif
 						User messages:
 						@foreach($data["messages"] as $oneMessage)
 						<div class="col-md-12">
