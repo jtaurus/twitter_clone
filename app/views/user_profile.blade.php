@@ -40,6 +40,7 @@ Viewing profile: {{$data["user"]->username}}
 					</div>
 				</div>
 				<div class="col-md-9">
+					@include('partials.message_posting_form')
 					User messages:
 					
 					<div class="row">

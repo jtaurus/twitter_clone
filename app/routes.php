@@ -31,3 +31,7 @@ Route::post('/login', ['as' => 'login_post', 'uses' => 'UserController@log_in'])
 // Logout:
 
 Route::get('/logout', ['as' => 'logout', 'uses' => 'UserController@logout']);
+
+// Message posting:
+
+Route::post('/user/{username}/post', ['as' => 'post_message', 'uses' => 'UserController@post_message']);

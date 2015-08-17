@@ -48,4 +48,7 @@ class UserController extends BaseController{
 		Return Redirect::to(URL::previous());
 	}
 
+	public function post_message(){
+		
+	}
 }
