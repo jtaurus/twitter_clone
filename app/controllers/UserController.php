@@ -49,8 +49,13 @@ class UserController extends BaseController{
 	}
 
 	public function post_message($username){
-		if(!Auth::check || Auth::user()->username != $username){
+		if(!Auth::check() || Auth::user()->username != $username){
 			Return Redirect::to(URL::previous());
 		}
+		$messageInstance = new Message;
+		$messageInstance->message_body = Input::get('message');
+		$messageInstance->user_id = Auth::user()->id;
+		$messageInstance->save();
+		Return Redirect::route('user_profile', Auth::user()->username);
 	}
 }
