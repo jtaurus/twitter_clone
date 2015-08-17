@@ -6,7 +6,7 @@ View::composer('user_profile', function($view){
 	$userReference = $view->getData()["user"];
 	$data["user"] = $userReference;
 	// Find users messages:
-	$userMessages = $userReference->messages()->get();
+	$userMessages = $userReference->messages()->orderBy('id', 'DESC')->get();
 	$data["messages"] = $userMessages;
 	// Find users recent followers:
 	$userFollowers = $userReference->followers()->orderBy('id', 'DESC')->get()->take(5);
