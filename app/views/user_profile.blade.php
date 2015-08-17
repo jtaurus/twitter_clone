@@ -40,10 +40,9 @@ Viewing profile: {{$data["user"]->username}}
 					</div>
 				</div>
 				<div class="col-md-9">
-					@include('partials.message_posting_form')
-					User messages:
-					
 					<div class="row">
+						@include('partials.message_posting_form')
+						User messages:
 						@foreach($data["messages"] as $oneMessage)
 						<div class="col-md-12">
 							<div class="text-right">Posted on: {{$oneMessage->created_at}}</div>
