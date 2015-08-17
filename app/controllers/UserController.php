@@ -52,10 +52,17 @@ class UserController extends BaseController{
 		if(!Auth::check() || Auth::user()->username != $username){
 			Return Redirect::to(URL::previous());
 		}
-		$messageInstance = new Message;
-		$messageInstance->message_body = Input::get('message');
-		$messageInstance->user_id = Auth::user()->id;
-		$messageInstance->save();
+		$validatorRules = array('message' => 'required|min:1|max:255');
+		$validatorInstance = Validator::make(array( 'message' => Input::get('message')), $validatorRules);
+		if($validatorInstance->passes()){
+			$messageInstance = new Message;
+			$messageInstance->message_body = Input::get('message');
+			$messageInstance->user_id = Auth::user()->id;
+			$messageInstance->save();
+		}
+		else{
+			Return Redirect::to(URL::previous());
+		}
 		Return Redirect::route('user_profile', Auth::user()->username);
 	}
 }
